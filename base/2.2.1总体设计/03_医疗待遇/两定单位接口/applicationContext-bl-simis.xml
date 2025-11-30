@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans >
+  <bean id="accountPayApplogic" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.applogic.corecalc.methodbase.calcaccount.AccountPayApplogicImpl" parent="feeCalcMethodApplogic" >
+  </bean>
+  <bean id="authenticateApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.applogic.impl.AuthenticateApplogicImpl" >
+    
+    <property  name="generateCodeApplogic"  ref="generateCodeApplogic" />
+    <property  name="kf43DAO"  ref="kf43DAO" />
+    <property  name="kf44DAO"  ref="kf44DAO" />
+    <property  name="shareBusinessApplogic"  ref="shareBusinessApplogic" />
+    <property  name="siInterfaceConfigMap"  ref="siInterfaceConfigMap" />
+  </bean>
+  
+  <bean id="az01AC01DAO" class="com.neusoft.si.simis.core.medshare.domain.share.dao.impl.AZ01AC01DAOImpl" >
+  </bean>
+  <bean id="az01DAO" class="com.neusoft.si.simis.core.medshare.domain.basic.dao.impl.AZ01DAOImpl" >
+  </bean>
+  
+  <bean id="basicDataDownloadApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.download.impl.BasicDataDownloadApplogic" parent="downLoadDealApplogic" >
+  </bean>
+  <bean id="basicInfoApplogic" class="com.neusoft.si.simis.core.medshare.domain.basic.applogic.impl.BasicInfoApplogicImpl" >
+    <property  name="kc03kc04DAO"  ref="kc03KC04DAO" />
+    <property  name="medAC01DAO"  ref="medAC01DAO" />
+    <property  name="medAC02DAO"  ref="medAC02DAO" />
+    <property  name="medAE10DAO"  ref="medAE10DAO" />
+    <property  name="shareBusinessApplogic"  ref="shareBusinessApplogic" />
+  </bean>
+  <bean id="beginLinePayApplogic" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.applogic.corecalc.methodbase.calcbeginline.BeginLinePayApplogicImpl" parent="feeCalcMethodApplogic" >
+  </bean>
+  <bean id="businessDealApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.applogic.impl.BusinessDealApplogicImpl" abstract="true" >
+    <property  name="shareBusinessApplogic"  ref="shareBusinessApplogic" />
+  </bean>
+
+  <bean id="cancelApplyApplogic" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.applogic.impl.CancelApplyApplogicImpl" >
+  </bean>
+  <bean id="cancelApproveApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.business.CancelApproveApplogic" parent="businessDealApplogic" >
+  </bean>
+
+  <bean id="cardStringDealApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.applogic.impl.CardStringDealApplogicImpl" >
+  </bean>
+  <bean id="cashPayApplogic" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.applogic.corecalc.methodbase.calcfundpay.CashPayApplogicImpl" parent="feeCalcMethodApplogic" >
+  </bean>
+  <bean id="changePasswordApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.business.ChangePasswordApplogic" parent="businessDealApplogic" >
+  </bean>
+  <bean id="checkAccountInfoApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.applogic.impl.CheckAccountInfoApplogicImpl" >
+    <property  name="kc04DAO"  ref="kc04DAO" />
+    <property  name="kc41DAO"  ref="kc41DAO" />
+  </bean>
+  <bean id="checkPasswordApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.business.CheckPasswordApplogic" parent="businessDealApplogic" >
+  </bean>
+  <bean id="checkReadCardApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.applogic.impl.CheckReadCardApplogicImpl" >
+  </bean>
+  <bean id="dealForeignInfoApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.applogic.impl.DealForeignInfoApplogicImpl" >
+    <property  name="kz33DAO"  ref="kz33DAO" />
+  </bean>
+  <bean id="detailBalanceApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.business.DetailBalanceApplogic" parent="businessDealApplogic" >
+  </bean>
+  <bean id="diseaseFundPayApplogic" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.applogic.corecalc.methodbase.calcdiseasefund.DiseaseFundPayApplogic" parent="feeCalcMethodApplogic" >
+  </bean>
+  <bean id="diseaseLimitCalcApplogic" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.applogic.corecalc.methodbase.calcdiseasefund.DiseaseLimitCalcApplogicImpl" parent="feeCalcMethodApplogic" >
+  </bean>
+  <bean id="downLoadDealApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.download.impl.DownLoadDealApplogicImpl" abstract="true" >
+  </bean>
+  
+  <bean id="feeBalanceApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.business.FeeBalanceApplogic" parent="businessDealApplogic" >
+  </bean>
+  <bean id="feeCalcMethodApplogic" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.applogic.corecalc.calccontrol.impl.FeeCalcMethodApplogicImpl" abstract="true" >
+  </bean>
+  <bean id="feeCopyApplogic" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.applogic.corecalc.methodbase.calcfundpay.FeeCopyApplogicImpl" >
+  </bean>
+  <bean id="feeDetailCalcApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.business.FeeDetailCalcApplogic" parent="businessDealApplogic" >
+  </bean>
+  <bean id="fetchLockTypeApplogic" class="com.neusoft.si.simis.core.medshare.domain.pub.applogic.impl.FetchLockTypeApplogicImpl" >
+  </bean>
+
+  <bean id="fullDayAge" class="com.neusoft.si.simis.core.medshare.domain.share.applogic.impl.calcage.FullDayAge" >
+  </bean>
+  <bean id="fundPayByDiseaseApplogic" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.applogic.corecalc.methodbase.calcdiseasefund.FundPayByDiseaseApplogicImpl" parent="feeCalcMethodApplogic" >
+  </bean>
+  <bean id="fundPayByDiseaseApplogic9" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.applogic.corecalc.methodbase.calcdiseasefund.FundPayByDiseaseApplogicImpl9" parent="feeCalcMethodApplogic" >
+  </bean>
+  <bean id="generateCodeApplogic" class="com.neusoft.si.simis.core.medshare.domain.share.applogic.impl.GenerateCodeApplogicImpl" >
+  </bean>
+  <bean id="generateForeignOutputApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.applogic.impl.GenerateForeignOutputApplogicImpl" >
+  </bean>
+  <bean id="generateOutputApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.applogic.impl.GenerateOutputApplogicImpl" >
+    <property  name="shareBusinessApplogic"  ref="shareBusinessApplogic" />
+  </bean>
+  <bean id="getSysdateApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.business.GetSysdateApplogic" parent="businessDealApplogic" >
+  </bean>
+  <bean id="hosRegisterApplogic" class="com.neusoft.si.simis.core.extinterface.domain.foreign.applogic.liaoning.send.HosRegisterApplogicImpl" parent="lnForeignSendApplogic" >
+  </bean>
+  <bean id="inputParamCheckApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.applogic.impl.InputParamCheckApplogicImpl" >
+    <property  name="siInterfaceConfigMap"  ref="siInterfaceConfigMap" />
+  </bean>
+ <bean id="insCalcApplogic" class="com.neusoft.si.simis.core.extinterface.domain.foreign.applogic.liaoning.accept.InsCalcApplogicImpl" parent="lnForeignAcceptApplogic" >
+  </bean>
+  <bean id="insCancelCalcApplogic" class="com.neusoft.si.simis.core.extinterface.domain.foreign.applogic.liaoning.accept.InsCancelCalcApplogicImpl" parent="lnForeignAcceptApplogic" >
+  </bean>
+  <bean id="insCancelRecipeApplogic" class="com.neusoft.si.simis.core.extinterface.domain.foreign.applogic.liaoning.accept.InsCancelRecipeApplogicImpl" parent="lnForeignAcceptApplogic" >
+  </bean>
+  <bean id="insCancelRegisterApplogic" class="com.neusoft.si.simis.core.extinterface.domain.foreign.applogic.liaoning.accept.InsCancelRegisterApplogic" parent="lnForeignAcceptApplogic" >
+  </bean>
+  <bean id="insChangeRegisterApplogic" class="com.neusoft.si.simis.core.extinterface.domain.foreign.applogic.liaoning.accept.InsChangeRegisterApplogic" parent="lnForeignAcceptApplogic" >
+  </bean>
+  <bean id="insForeignerInfoApplogic" class="com.neusoft.si.simis.core.extinterface.domain.foreign.applogic.liaoning.accept.InsForeignerInfoApplogicImpl" parent="lnForeignAcceptApplogic" >
+  </bean>
+  <bean id="insGetApproveInfo" class="com.neusoft.si.simis.core.extinterface.domain.foreign.applogic.liaoning.accept.InsGetApproveInfoImpl" parent="lnForeignAcceptApplogic" >
+  </bean>
+  <bean id="insGetItemApproveInfoApplogic" class="com.neusoft.si.simis.core.extinterface.domain.foreign.applogic.liaoning.accept.InsGetItemApproveInfoApplogic" parent="lnForeignAcceptApplogic" >
+  </bean>
+  <bean id="insRecipeInputApplogic" class="com.neusoft.si.simis.core.extinterface.domain.foreign.applogic.liaoning.accept.InsRecipeInputApplogicImpl" parent="lnForeignAcceptApplogic" >
+  </bean>
+  <bean id="insRegisterApplogic" class="com.neusoft.si.simis.core.extinterface.domain.foreign.applogic.liaoning.accept.InsRegisterApplogicImpl" parent="lnForeignAcceptApplogic" >
+  </bean>
+  <bean id="insRepealApplogic" class="com.neusoft.si.simis.core.extinterface.domain.foreign.applogic.liaoning.accept.InsRepealApplogicImpl" parent="lnForeignAcceptApplogic" >
+  </bean>
+
+
+  <bean id="ka24DAO" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.dao.impl.KA24DAOImpl" >
+  </bean>
+  <bean id="ka52DAO" class="com.neusoft.si.simis.core.medshare.domain.share.dao.impl.KA52DAOImpl" >
+  </bean>
+  <bean id="ka65DAO" class="com.neusoft.si.simis.core.hisinterface.domain.dao.impl.KA65DAOImpl" >
+  </bean>
+  <bean id="ka_ALLDAO" class="com.neusoft.si.simis.core.medshare.domain.share.dao.impl.KA_ALLDAOImpl" >
+  </bean>
+  <bean id="kb01DAO" class="com.neusoft.si.simis.core.medshare.domain.share.dao.impl.KB01DAOImpl" >
+  </bean>
+  <bean id="kb10DAO" class="com.neusoft.si.simis.core.medshare.domain.pub.dao.impl.KB10DAOImpl" >
+  </bean>
+  
+  
+  <bean id="kb33DAO" class="com.neusoft.si.simis.core.medshare.domain.share.dao.impl.KB33DAOImpl" >
+  </bean>
+  <bean id="kc03DAO" class="com.neusoft.si.simis.core.medshare.domain.pub.dao.impl.KC03DAOImpl" >
+  </bean>
+  <bean id="kc03KC04DAO" class="com.neusoft.si.simis.core.medshare.domain.pub.dao.impl.KC03KC04DAOImpl" >
+    <property  name="shareBusinessApplogic"  ref="shareBusinessApplogic" />
+  </bean>
+  <bean id="kc04DAO" class="com.neusoft.si.simis.core.medshare.domain.pub.dao.impl.KC04DAOImpl" >
+  </bean>
+  <bean id="kc08DAO" class="com.neusoft.si.simis.core.medshare.domain.pub.dao.impl.KC08DAOImpl" >
+  </bean>
+  <bean id="kc10DAO" class="com.neusoft.si.simis.core.medshare.domain.share.dao.impl.KC10DAOImpl" >
+  </bean>
+  <bean id="kc21DAO" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.dao.impl.KC21DAOImpl" >
+  </bean>
+  <bean id="kc22DAO" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.dao.impl.KC22DAOImpl" >
+  </bean>
+  <bean id="kc24DAO" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.dao.impl.KC24DAOImpl" >
+  </bean>
+  <bean id="kc40DAO" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.dao.impl.KC40DAOImpl" >
+  </bean>
+  <bean id="kc41DAO" class="com.neusoft.si.simis.core.medshare.domain.share.dao.impl.KC41DAOImpl" >
+  </bean>
+
+  <bean id="kc45DAO_1923" class="com.neusoft.si.simis.core.medshare.domain.share.dao.impl.KC45DAOImpl" parent="kc41DAO" >
+  </bean>
+  <bean id="kc53DAO" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.dao.impl.KC53DAOImpl" >
+  </bean>
+  <bean id="kc56DAO" class="com.neusoft.si.simis.core.medshare.domain.pub.dao.impl.KC56DAOImpl" >
+  </bean>
+  <bean id="kc60DAO" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.dao.impl.KC60DAOImpl" >
+  </bean>
+  <bean id="kc61DAO" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.dao.impl.KC61DAOImpl" >
+  </bean>
+  <bean id="kd61DAO" class="com.neusoft.si.simis.core.medshare.domain.share.dao.impl.KD61DAOImpl" >
+  </bean>
+  <bean id="ke30DAO" class="com.neusoft.si.simis.core.medshare.domain.share.dao.impl.KE30DAOImpl" >
+  </bean>
+  <bean id="ke32DAO" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.dao.impl.KE32DAOImpl" >
+  </bean>
+  <bean id="ke33DAO" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.dao.impl.KE33DAOImpl" >
+  </bean>
+  <bean id="ke41DAO" class="com.neusoft.si.simis.core.medshare.domain.share.dao.impl.KE41DAOImpl" >
+  </bean>
+  <bean id="kf04DAO" class="com.neusoft.si.simis.core.medshare.domain.pub.dao.impl.KF04DAOImpl" >
+  </bean>
+  <bean id="kf43DAO" class="com.neusoft.si.simis.core.hisinterface.domain.dao.impl.KF43DAOImpl" >
+  </bean>
+  <bean id="kf44DAO" class="com.neusoft.si.simis.core.hisinterface.domain.dao.impl.KF44DAOImpl" >
+  </bean>
+  <bean id="kf45DAO" class="com.neusoft.si.simis.core.hisinterface.domain.dao.impl.KF45DAOImpl" >
+  </bean>
+  <bean id="kf46DAO" class="com.neusoft.si.simis.core.hisinterface.domain.dao.impl.KF46DAOImpl" >
+  </bean>
+  <bean id="kf47DAO" class="com.neusoft.si.simis.core.hisinterface.domain.dao.impl.KF47DAOImpl" >
+  </bean>
+  <bean id="kf48DAO" class="com.neusoft.si.simis.core.hisinterface.domain.dao.impl.KF48DAOImpl" >
+  </bean>
+  <bean id="kf80DAO" class="com.neusoft.si.simis.core.medshare.domain.share.dao.impl.KF80DAOImpl" >
+  </bean>
+  <bean id="kz09DAO" class="com.neusoft.si.simis.core.medshare.domain.pub.dao.impl.KZ09DAOImpl" >
+  </bean>
+  <bean id="kz33DAO" class="com.neusoft.si.simis.core.extinterface.domain.foreign.dao.impl.KZ33DAOImpl" >
+  </bean>
+  <bean id="kz91DAO_1920" class="com.neusoft.si.simis.core.medshare.domain.share.dao.impl.KZ91DAOImpl" >
+  </bean>
+  <bean id="lnForeignAcceptApplogic" class="com.neusoft.si.simis.core.extinterface.domain.foreign.applogic.liaoning.LnForeignAcceptApplogicImpl" abstract="true" >
+  </bean>
+  <bean id="lnForeignSendApplogic" class="com.neusoft.si.simis.core.extinterface.domain.foreign.applogic.liaoning.LnForeignSendApplogicImpl" abstract="true" >
+  </bean>
+  <bean id="lnSendInterfaceApplogic" class="com.neusoft.si.simis.core.extinterface.domain.foreign.applogic.liaoning.LnSendInterfaceApplogicImpl" >
+  </bean>
+
+  <bean id="medAC01DAO" class="com.neusoft.si.simis.core.medshare.domain.basic.dao.impl.MedAC01DAOImpl" >
+  </bean>
+  <bean id="medAC02DAO" class="com.neusoft.si.simis.core.medshare.domain.basic.dao.impl.MedAC02DAOImpl" >
+  </bean>
+  <bean id="medAE10DAO" class="com.neusoft.si.simis.core.medshare.domain.basic.dao.impl.MedAE10DAOImpl" >
+  </bean>
+  <bean id="medAE06DAO" class="com.neusoft.si.simis.core.medshare.domain.basic.dao.impl.MedAE06DAOImpl" >
+  </bean>
+  <bean id="medAccountApplogic" class="com.neusoft.si.simis.core.medshare.domain.pub.applogic.impl.MedAccountApplogicImpl" >
+    <property  name="kc03DAO"  ref="kc03DAO" />
+    <property  name="kc03kc04DAO"  ref="kc03KC04DAO" />
+    <property  name="kc04DAO"  ref="kc04DAO" />
+    <property  name="shareBusinessApplogic"  ref="shareBusinessApplogic" />
+  </bean>
+  <bean id="medCalcQueryApplogic" class="com.neusoft.si.simis.core.medshare.domain.pub.applogic.impl.MedCalcQueryApplogicImpl" >
+    <property  name="ac01DAO"  ref="medAC01DAO" />
+    <property  name="ac02DAO"  ref="medAC02DAO" />
+    <property  name="ae06DAO"  ref="medAE06DAO" />
+    <property  name="ae10DAO"  ref="medAE10DAO" />
+    <property  name="basicInfoApplogic"  ref="basicInfoApplogic" />
+    <property  name="ka_allDAO"  ref="ka_ALLDAO" />
+    <property  name="kb10DAO"  ref="kb10DAO" />
+    <property  name="kc03DAO"  ref="kc03DAO" />
+    <property  name="kc03kc04DAO"  ref="kc03KC04DAO" />
+    <property  name="kc04DAO"  ref="kc04DAO" />
+    <property  name="kc08DAO"  ref="kc08DAO" />
+    <property  name="kc10DAO"  ref="kc10DAO" />
+    <property  name="kc21DAO"  ref="kc21DAO" />
+    <property  name="kc22DAO"  ref="kc22DAO" />
+    <property  name="kc40DAO"  ref="kc40DAO" />
+    <property  name="kc41DAO"  ref="kc41DAO" />
+    <property  name="kc45DAO"  ref="kc45DAO_1923" />
+    <property  name="kc53DAO"  ref="kc53DAO" />
+    <property  name="kc56DAO"  ref="kc56DAO" />
+    <property  name="kf04DAO"  ref="kf04DAO" />
+    <property  name="kz09DAO"  ref="kz09DAO" />
+    <property  name="medCalcQueryExtApplogic"  ref="medCalcQueryExtApplogic" />
+    <property  name="medFeeConvertApplogic"  ref="medFeeConvertApplogic" />
+    <property  name="medicalCardApplogic"  ref="medicalCardApplogic" />
+    <property  name="personAgeApplogic"  ref="fullDayAge" />
+    <property  name="personMedicareTypeApplogic"  ref="personMedicareTypeApplogic" />
+    <property  name="sessionContextApplogic"  ref="sessionContextApplogic_1926" />
+    <property  name="shareBusinessApplogic"  ref="shareBusinessApplogic" />
+  </bean>
+  <bean id="medCalcQueryExtApplogic" class="com.neusoft.si.simis.core.medshare.domain.pub.applogic.impl.MedCalcQueryExtApplogicImpl" >
+  </bean>
+  
+  <bean id="medFeeCalcApplogic" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.applogic.corecalc.calccontrol.impl.MedFeeCalcApplogicImpl" >
+  </bean>
+  <bean id="medFeeConvertApplogic" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.applogic.impl.MedFeeConvertApplogicImpl" >
+    <property  name="kc53DAO"  ref="kc53DAO" />
+    <property  name="kc60DAO"  ref="kc60DAO" />
+    <property  name="kc61DAO"  ref="kc61DAO" />
+    <property  name="ke30DAO"  ref="ke30DAO" />
+    <property  name="shareBusinessApplogic"  ref="shareBusinessApplogic" />
+  </bean>
+  <bean id="medicalCardApplogic" class="com.neusoft.si.simis.core.medshare.domain.share.applogic.impl.MedicalCardApplogicImpl" >
+  </bean>
+ 
+  <bean id="medicareTradeApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.applogic.impl.MedicareTradeApplogicImpl" >
+    <property  name="basicInfoApplogic"  ref="basicInfoApplogic" />
+    <property  name="cancelApplyApplogic"  ref="cancelApplyApplogic" />
+    <property  name="generateForeignOutputApplogic"  ref="generateForeignOutputApplogic" />
+    <property  name="generateOutputApplogic"  ref="generateOutputApplogic" />
+    <property  name="kc21DAO"  ref="kc21DAO" />
+    <property  name="kc22DAO"  ref="kc22DAO" />
+    <property  name="kc24DAO"  ref="kc24DAO" />
+    <property  name="medCalcQueryApplogic"  ref="medCalcQueryApplogic" />
+    <property  name="medFeeCalcApplogic"  ref="medFeeCalcApplogic" />
+    <property  name="medicalCardApplogic"  ref="medicalCardApplogic" />
+    <property  name="medicareTradeExtApplogic"  ref="medicareTradeExtApplogic" />
+
+    <property  name="recipeInputApplogic"  ref="recipeInputApplogic_1925" />
+    <property  name="seeDoctorApplogic"  ref="seeDoctorApplogic" />
+    <property  name="settleYearApplogic"  ref="settleYearApplogic" />
+    <property  name="shareBusinessApplogic"  ref="shareBusinessApplogic" />
+  </bean>
+  <bean id="medicareTradeExtApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.applogic.impl.MedicareTradeExtApplogicImpl" >
+    <property  name="kc22DAO"  ref="kc22DAO" />
+  </bean>
+ 
+  <bean id="officialPayApplogic" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.applogic.corecalc.methodbase.calcofficial.OfficialPayApplogicImpl" parent="feeCalcMethodApplogic" >
+  </bean>
+  <bean id="officialSubsectionApplogic" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.applogic.corecalc.methodbase.calcofficial.OfficialSubsectionApplogic" parent="feeCalcMethodApplogic" >
+  </bean>
+  <bean id="oneBeginLinePerYearApplogic" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.applogic.corecalc.methodbase.calcbeginline.OneBeginLinePerYearApplogicImpl" parent="feeCalcMethodApplogic" >
+  </bean>
+  <bean id="orgAccountPayApplogic" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.applogic.corecalc.methodbase.calcaccount.OrgAccountPayApplogicImpl" parent="feeCalcMethodApplogic" >
+  </bean>
+  
+  <bean id="otherTradeCheckApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.applogic.impl.OtherTradeCheckApplogicImpl" >
+    <property  name="kb01DAO"  ref="kb01DAO" />
+    <property  name="kf80DAO"  ref="kf80DAO" />
+  </bean>
+  <bean id="outPersonPayApplogic" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.applogic.corecalc.methodbase.calcother.OutPersonPayApplogicImpl" parent="feeCalcMethodApplogic" >
+  </bean>
+  <bean id="payAsRatioApplogic" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.applogic.corecalc.methodbase.calcsub.PayAsRatioApplogicImpl" parent="feeCalcMethodApplogic" >
+  </bean>
+  <bean id="personInHosInfoApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.business.PersonInHosInfoApplogic" parent="businessDealApplogic" >
+  </bean>
+  <bean id="personMedicareTypeApplogic" class="com.neusoft.si.simis.core.medshare.domain.share.applogic.impl.PersonMedicareTypeApplogicImpl" >
+  </bean>
+
+ 
+  <bean id="queryApproveInfo" class="com.neusoft.si.simis.core.hisinterface.domain.business.QueryApproveInfo" parent="businessDealApplogic" >
+  </bean>
+  <bean id="queryAuditDetailInfoApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.business.QueryAuditDetailInfoApplogic" parent="businessDealApplogic" >
+  </bean>
+  <bean id="queryAuditSummaryInfoApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.business.QueryAuditSummaryInfoApplogic" parent="businessDealApplogic" >
+  </bean>
+  <bean id="queryCompareApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.download.impl.QueryCompareApplogic" parent="downLoadDealApplogic" >
+  </bean>
+  <bean id="queryFeeApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.download.impl.QueryFeeApplogic" parent="downLoadDealApplogic" >
+  </bean>
+  <bean id="queryFeeDetailApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.download.impl.QueryFeeDetailApplogic" parent="downLoadDealApplogic" >
+  </bean>
+  <bean id="queryHosFeeInfoApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.business.QueryHosFeeInfoApplogic" parent="businessDealApplogic" >
+  </bean>
+  <bean id="queryInHosInfoApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.business.QueryInHosInfoApplogic" parent="businessDealApplogic" >
+  </bean>
+  <bean id="queryLockAllInfoApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.business.QueryLockAllInfoApplogic" parent="businessDealApplogic" >
+  </bean>
+  <bean id="queryLockInfo" class="com.neusoft.si.simis.core.hisinterface.domain.business.QueryLockInfo" parent="businessDealApplogic" >
+  </bean>
+  <bean id="queryMessageInfoApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.business.QueryMessageInfoApplogic" parent="businessDealApplogic" >
+  </bean>
+  <bean id="queryNoticeInfoApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.business.QueryNoticeInfoApplogic" parent="businessDealApplogic" >
+  </bean>
+  <bean id="queryPersonInfoApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.business.QueryPersonInfoApplogic" parent="businessDealApplogic" >
+  </bean>
+  <bean id="queryRecentFeeApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.business.QueryRecentFeeApplogic" parent="businessDealApplogic" >
+  </bean>
+  <bean id="queryStoreInfoApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.business.QueryStoreInfoApplogic" parent="businessDealApplogic" >
+  </bean>
+  <bean id="readCardApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.business.ReadCardApplogic" parent="businessDealApplogic" >
+  </bean>
+  <bean id="recipeInputApplogic_1925" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.applogic.recipeinput.impl.RecipeInputApplogicImpl" >
+    <property  name="ka52DAO"  ref="ka52DAO" />
+    <property  name="sessionContextApplogic"  ref="sessionContextApplogic_1926" />
+    <property  name="shareBusinessApplogic"  ref="shareBusinessApplogic" />
+  </bean>
+  
+
+  <bean id="repealApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.business.RepealApplogic" parent="businessDealApplogic" >
+  </bean>
+  <bean id="repealExpCalcApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.business.RepealExpCalcApplogic" parent="businessDealApplogic" >
+  </bean>
+  <bean id="reprintBillApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.business.ReprintBillApplogicImpl" parent="businessDealApplogic" >
+  </bean>
+  <bean id="saveDiagnoseApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.business.SaveDiagnoseApplogic" parent="businessDealApplogic" >
+  </bean>
+  
+
+  <bean id="seeDoctorApplogic" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.applogic.register.impl.SeeDoctorApplogicImpl" >
+  </bean>
+  <bean id="sessionContextApplogic_1926" class="com.neusoft.si.simis.core.medshare.domain.share.applogic.impl.SessionContextApplogicImpl" >
+  </bean>
+  <bean id="settleYearApplogic" class="com.neusoft.si.simis.core.medshare.domain.share.applogic.impl.SettleYearApplogicImpl" >
+  </bean>
+  <bean id="shareBusinessApplogic" class="com.neusoft.si.simis.core.medshare.domain.share.applogic.impl.ShareBusinessApplogicImpl" >
+    <property  name="ka24DAO"  ref="ka24DAO" />
+    <property  name="kb01DAO"  ref="kb01DAO" />
+    <property  name="ke32DAO"  ref="ke32DAO" />
+    <property  name="ke33DAO"  ref="ke33DAO" />
+    <property  name="ke41DAO"  ref="ke41DAO" />
+  </bean>
+  <bean id="siInterfaceApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.applogic.impl.SiInterfaceApplogicImpl" >
+    <property  name="authenticateApplogic"  ref="authenticateApplogic" />
+    <property  name="cardStringDealApplogic"  ref="cardStringDealApplogic" />
+    <property  name="checkReadCardApplogic"  ref="checkReadCardApplogic" />
+    <property  name="dealForeignInfoApplogic"  ref="dealForeignInfoApplogic" />
+    <property  name="generateCodeApplogic"  ref="generateCodeApplogic" />
+    <property  name="medicareTradeApplogic"  ref="medicareTradeApplogic" />
+    <property  name="siInterfaceConfigMap"  ref="siInterfaceConfigMap" />
+  </bean>
+  <bean id="siInterfaceConfigMap" class="com.neusoft.si.simis.core.hisinterface.domain.applogic.impl.SiInterfaceConfigMapImpl" init-method="init" >
+    <property  name="kf45DAO"  ref="kf45DAO" />
+    <property  name="kf46DAO"  ref="kf46DAO" />
+    <property  name="kf47DAO"  ref="kf47DAO" />
+    <property  name="kf48DAO"  ref="kf48DAO" />
+    
+  </bean>
+  <bean id="siInterfaceInteraction" class="com.neusoft.si.simis.core.hisinterface.interaction.impl.SiInterfaceInteractionImpl" >
+    <property  name="inputParamCheckApplogic"  ref="inputParamCheckApplogic" />
+    <property  name="siInterfaceApplogic"  ref="siInterfaceApplogic" />
+  </bean>
+
+  <bean id="subsectionCalcApplogic" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.applogic.corecalc.methodbase.calcsub.SubsectionCalcApplogicImpl" parent="feeCalcMethodApplogic" >
+  </bean>
+  <bean id="subsectionCalcApplogic2" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.applogic.corecalc.methodbase.calcsub.SubsectionCalcApplogicImpl2" parent="feeCalcMethodApplogic" >
+  </bean>
+  <bean id="subsectionCalcApplogic9" class="com.neusoft.si.simis.core.medshare.domain.treatcalc.applogic.corecalc.methodbase.calcsub.SubsectionCalcApplogicImpl9" parent="feeCalcMethodApplogic" >
+  </bean>
+  <bean id="uploadApproveInfoApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.business.UploadApproveInfoApplogic" parent="businessDealApplogic" >
+  </bean>
+  <bean id="uploadCompareInfoApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.business.UploadCompareInfoApplogic" parent="businessDealApplogic" >
+  </bean>
+  <bean id="uploadDrugInfoApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.business.UploadDrugInfoApplogic" parent="businessDealApplogic" >
+  </bean>
+  <bean id="uploadMaterialInfoApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.business.UploadMaterialInfoApplogic" parent="businessDealApplogic" >
+  </bean>
+  <bean id="uploadStoreInfoApplogic" class="com.neusoft.si.simis.core.hisinterface.domain.business.UploadStoreInfoApplogic" parent="businessDealApplogic" >
+  </bean>
+</beans>
